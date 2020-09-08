@@ -11,19 +11,28 @@
 <?php
 $numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 $signs = array('+', '-', '*', '-', '/', '%');
+$number1; 
+$number2; 
+
 for ($i = 0; $i < count($numbers); $i++) {
-    echo "<input name=\"$numbers[$i]\" type=\"button\" value =\"$numbers[$i]\">";
+    echo "<input name=\"number\" type=\"submit\" value =\"$numbers[$i]\">";
 }
 for ($i = 0; $i < count($signs); $i++) {
-    echo "<input name=\"$signs[$i]\" type=\"button\" value =\"$signs[$i]\">";
+    echo "<input name=\"sign\" type=\"submit\" value =\"$signs[$i]\">";
 }
 
 ?>
-<input type="submit" name="submit" value="calculer">
+<input type="submit" name="submit" value="=">
 </form>
 <?php
+if (isset($_POST['number'])) {
+var_dump($_POST['number']);
+$number1 = $_POST['number']
+}
 
-var_dump($_POST);
+if (isset($_POST['sign'])) {
+    var_dump($_POST['sign']);
+    }
 
 function add($number1, $number2) {
     $resultat = $number1 + $number2; 
